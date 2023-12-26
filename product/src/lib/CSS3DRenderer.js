@@ -315,15 +315,8 @@ THREE.CSS3DRenderer = function () {
 		}
 
 		renderObject( scene, camera, cameraCSSMatrix );
-
 		if ( isIE ) {
-
-			// IE10 and 11 does not support 'preserve-3d'.
-			// Thus, z-order in 3D will not work.
-			// We have to calc z-order manually and set CSS z-index for IE.
-			// FYI: z-index can't handle object intersection
 			zOrder( scene );
-
 		}
 
 	};

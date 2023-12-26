@@ -93,7 +93,10 @@ function initAll() {
         currentPrize = basicData.prizes[currentPrizeIndex];
         break;
       }
-
+      if (typeof currentPrizeIndex == 'undefined') {
+        currentPrizeIndex = 0;
+        currentPrize = basicData.prizes[currentPrizeIndex];
+      }
       showPrizeList(currentPrizeIndex);
       let curLucks = basicData.luckyUsers[currentPrize.type];
       setPrizeData(currentPrizeIndex, curLucks ? curLucks.length : 0, true);
@@ -104,9 +107,7 @@ function initAll() {
     url: "/getUsers",
     success(data) {
       basicData.users = data;
-
       initCards();
-      // startMaoPao();
       animate();
       shineCard();
     }
@@ -180,8 +181,6 @@ function initCards() {
   renderer = new THREE.CSS3DRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.getElementById("container").appendChild(renderer.domElement);
-
-  //
 
   controls = new THREE.TrackballControls(camera, renderer.domElement);
   controls.rotateSpeed = 0.5;

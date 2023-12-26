@@ -16,7 +16,6 @@ window.AJAX = function (opt) {
     }
 
     xhr.onreadystatechange = function () {
-        // try {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 let res = xhr.responseText;
@@ -26,9 +25,6 @@ window.AJAX = function (opt) {
                 console.log('There was a problem with the request.');
             }
         }
-        // } catch (e) {
-        //     console.error('Caught Exception: ' + e);
-        // }
     }
     xhr.open(opt.type, opt.url, opt.async);
     xhr.setRequestHeader('Content-Type', 'application/json');
