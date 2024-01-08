@@ -22,11 +22,11 @@ const prizes = [
     count: 1,
     step: 1,
     text: "一等奖",
-    title: "极米投影机",
+    title: "凡尔赛奖",
     prev: 'prize_01_',
     defaultimg: '../img/secrit.jpg',
     img: ["../img/prize_01_1.jpg"],
-    desc: ["极米Z7X 投影仪家用 轻薄投影机"],
+    desc: ["极米Z7X投影机"],
   },
   {
     type: 2,
@@ -37,7 +37,7 @@ const prizes = [
     prev: 'prize_02_',
     defaultimg: '../img/secrit.jpg',
     img: ["../img/prize_02_1.jpg","../img/prize_02_2.jpg"],
-    desc: ['小米米家电动滑板车', '华为 HUAWEI WATCH GT 4 46mm 曜石黑 华为手表'],
+    desc: ['米家电动滑板车', '华为GT4曜石黑手表'],
   },
   {
     type: 3,
@@ -48,7 +48,7 @@ const prizes = [
     prev: 'prize_03_',
     defaultimg: '../img/secrit.jpg',
     img: ["../img/prize_03_1.jpg", "../img/prize_03_2.jpg", "../img/prize_03_3.jpg"],
-    desc: ['华为平板', '兰蔻卢浮宫限定唇膏三支装礼盒', 'skg颈椎按摩器'],
+    desc: ['华为平板', '兰蔻卢浮宫限定唇膏', 'skg颈椎按摩器'],
   },
   {
     type: 4,
@@ -59,7 +59,7 @@ const prizes = [
     prev: 'prize_04_',
     defaultimg: '../img/secrit.jpg',
     img: ["../img/prize_04_1.jpg", "../img/prize_04_2.jpg", "../img/prize_04_3.jpg", "../img/prize_04_4.jpg"],
-    desc: ['牧高笛（MOBIGARDEN）自动帐篷 ', '苏泊尔（SUPOR）电饭煲Pro', '小米空气净化器', '欧乐B成人电动牙刷礼盒 Pro1 Max美白刷'],
+    desc: ['牧高笛帐篷 ', '苏泊尔电饭煲', '空气净化器', '电动牙刷'],
   },
   {
     type: 5,
@@ -70,7 +70,7 @@ const prizes = [
     prev: 'prize_05_',
     defaultimg: '../img/secrit.jpg',
     img: ["../img/prize_05_1.jpg", "../img/prize_05_2.jpg", "../img/prize_05_3.jpg", "../img/prize_05_4.jpg", "../img/prize_05_5.jpg"],
-    desc: ['小熊（Bear）加湿器', '蕉下（beneunder）儿童防风雨伞长柄', '小米 米家智能体脂秤', '乐扣乐扣（LOCK&LOCK）保温杯咖啡杯不锈钢水杯', '罗技（Logitech）M330 静音鼠标'],
+    desc: ['小熊加湿器', '儿童防风雨伞', '米家智能体脂秤', '保温杯', '罗技静音鼠标'],
   },
 ];
 
