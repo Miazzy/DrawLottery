@@ -107,7 +107,6 @@ class Qipao {
     this.element = document.createElement("div");
     this.element.className = "qipao animated";
     this.$par.appendChild(this.element);
-
     this.start();
   }
 
@@ -168,7 +167,7 @@ function showPrizeList(currentPrizeIndex) {
     }">
                         <span></span><span></span><span></span><span></span>
                         <div class="prize-img">
-                            <img src="${item.img}" alt="${item.title}">
+                            <img src="${item.img[0]}" alt="${item.title}">
                         </div>
                         <div class="prize-text">
                             <h5 class="prize-title">${item.text} ${
@@ -188,7 +187,14 @@ function showPrizeList(currentPrizeIndex) {
                                 </div>
                             </div>
                         </div>
-                    </li>`;
+                        
+                    </li>
+                    <li id="prize-item-img-${item.type}" class="prize-item prize-item-none ${item.type == currentPrize.type ? "shine" : ""}" >
+                      <div class="prize-img-big ">
+                          <img src="${item.img[0]}" alt="${item.title}">
+                      </div>
+                    </li>
+                    `;
   });
   htmlCode += `</ul>`;
 
@@ -202,7 +208,7 @@ function resetPrize(currentPrizeIndex) {
 }
 
 let setPrizeData = (function () {
-  return function (currentPrizeIndex, count, isInit) {
+  return function (currentPrizeIndex, count, isInit, loopCount) {
     let currentPrize = prizes[currentPrizeIndex],
       type = currentPrize.type,
       elements = prizeElement[type],
@@ -212,7 +218,8 @@ let setPrizeData = (function () {
       elements = {
         box: document.querySelector(`#prize-item-${type}`),
         bar: document.querySelector(`#prize-bar-${type}`),
-        text: document.querySelector(`#prize-count-${type}`)
+        text: document.querySelector(`#prize-count-${type}`),
+        ibox: document.querySelector(`#prize-item-img-${type}`),
       };
       prizeElement[type] = elements;
     }
@@ -235,11 +242,15 @@ let setPrizeData = (function () {
     }
 
     if (lasetPrizeIndex !== currentPrizeIndex) {
-      let lastPrize = prizes[lasetPrizeIndex],
-        lastBox = document.querySelector(`#prize-item-${lastPrize.type}`);
+      let lastPrize = prizes[lasetPrizeIndex];
+      let lastBox = document.querySelector(`#prize-item-${lastPrize.type}`);
+      let lastIBox = document.querySelector(`#prize-item-img-${lastPrize.type}`);
       lastBox.classList.remove("shine");
+      lastIBox.classList.remove("shine");
       lastBox.classList.add("done");
+      lastIBox.classList.add("done");
       elements.box && elements.box.classList.add("shine");
+      elements.ibox && elements.ibox.classList.add("shine");
       prizeElement.prizeType.textContent = currentPrize.text;
       prizeElement.prizeText.textContent = currentPrize.title;
 
@@ -258,6 +269,8 @@ let setPrizeData = (function () {
     let percent = (count / totalCount).toFixed(2);
     elements.bar && (elements.bar.style.width = percent * 100 + "%");
     elements.text && (elements.text.textContent = count + "/" + totalCount);
+    elements.box && (elements.box.querySelector('img').src = prizes[currentPrizeIndex]['img'][loopCount-1]);
+    elements.ibox && (elements.ibox.querySelector('img').src = prizes[currentPrizeIndex]['img'][loopCount-1]);
     prizeElement.prizeLeft.textContent = count;
   };
 })();

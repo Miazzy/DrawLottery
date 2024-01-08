@@ -99,7 +99,7 @@ function initAll() {
       }
       showPrizeList(currentPrizeIndex);
       let curLucks = basicData.luckyUsers[currentPrize.type];
-      setPrizeData(currentPrizeIndex, curLucks ? curLucks.length : 0, true);
+      setPrizeData(currentPrizeIndex, curLucks ? curLucks.length : 0, true, 1);
     }
   });
 
@@ -688,8 +688,9 @@ function saveData() {
 function changePrize() {
   let luckys = basicData.luckyUsers[currentPrize.type];
   let luckyCount = (luckys ? luckys.length : 0) + EACH_COUNT[currentPrizeIndex];
+  let loopCount = luckyCount/EACH_COUNT[currentPrizeIndex];
   // 修改左侧prize的数目和百分比
-  setPrizeData(currentPrizeIndex, luckyCount);
+  setPrizeData(currentPrizeIndex, luckyCount, false, loopCount);
 }
 
 /**
