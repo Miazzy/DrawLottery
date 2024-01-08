@@ -189,9 +189,11 @@ function showPrizeList(currentPrizeIndex) {
                         </div>
                     </li>
                     <li id="prize-item-img-${item.type}" class="prize-item prize-item-none ${item.type == currentPrize.type ? "shine" : ""}" >
+                      <div class="title">本轮奖品</div>
                       <div class="prize-img-big ">
                           <img src="${item.defaultimg}" alt="${item.title}">
                       </div>
+                      <div class="desc text">神秘奖品</div>
                     </li>
                     `;
   });
@@ -271,6 +273,8 @@ let setPrizeData = (function () {
     if (loopCount >= 1) {
       elements.box && (elements.box.querySelector('img').src = prizes[currentPrizeIndex]['img'][loopCount-1]);
       elements.ibox && (elements.ibox.querySelector('img').src = prizes[currentPrizeIndex]['img'][loopCount-1]);
+      elements.ibox && (elements.ibox.querySelector('.desc.text').innerHTML = prizes[currentPrizeIndex]['desc'][loopCount-1]);
+      debugger;
     }
     prizeElement.prizeLeft.textContent = count;
   };

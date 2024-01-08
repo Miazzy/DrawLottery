@@ -204,6 +204,22 @@ button:active {
 
 .prize-item-none {
   display: none;
+
+
+}
+
+.prize-item-none .title {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 20px;
+}
+
+.prize-item-none .desc.text {
+  position: absolute;
+  bottom: 10px;
+  color: #fefefe;
+  margin-left: -12.5px;
 }
 
 .prize-item-none.shine {
@@ -211,6 +227,7 @@ button:active {
   height: 24vh;
   margin-top: 40px !important;
   margin-bottom: 31px !important;
+  background: rgba(0,0,0,0.87);
 }
 
 .prize-item .prize-img {
@@ -224,8 +241,8 @@ button:active {
 }
 
 .prize-img-big {
-  width: 20vh;
-  height: 20vh;
+  width: 16vh;
+  height: 16vh;
   margin-right: 1.2vh;
   border-radius: 50%;
   background-color: #fff;
@@ -234,8 +251,8 @@ button:active {
 }
 
 .prize-img img {
-  width: 90%;
-  height: 90%;
+  width: 101%;
+  height: 101%;
   position: relative;
   top: 50%;
   left: 50%;
@@ -243,8 +260,8 @@ button:active {
 }
 
 .prize-img-big img {
-  width: 90%;
-  height: 90%;
+  width: 101%;
+  height: 101%;
   position: relative;
   top: 50%;
   left: 50%;
