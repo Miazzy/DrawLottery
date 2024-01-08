@@ -167,7 +167,7 @@ function showPrizeList(currentPrizeIndex) {
     }">
                         <span></span><span></span><span></span><span></span>
                         <div class="prize-img">
-                            <img src="${item.img[0]}" alt="${item.title}">
+                            <img src="${item.defaultimg}" alt="${item.title}">
                         </div>
                         <div class="prize-text">
                             <h5 class="prize-title">${item.text} ${
@@ -187,11 +187,10 @@ function showPrizeList(currentPrizeIndex) {
                                 </div>
                             </div>
                         </div>
-                        
                     </li>
                     <li id="prize-item-img-${item.type}" class="prize-item prize-item-none ${item.type == currentPrize.type ? "shine" : ""}" >
                       <div class="prize-img-big ">
-                          <img src="${item.img[0]}" alt="${item.title}">
+                          <img src="${item.defaultimg}" alt="${item.title}">
                       </div>
                     </li>
                     `;
@@ -269,8 +268,10 @@ let setPrizeData = (function () {
     let percent = (count / totalCount).toFixed(2);
     elements.bar && (elements.bar.style.width = percent * 100 + "%");
     elements.text && (elements.text.textContent = count + "/" + totalCount);
-    elements.box && (elements.box.querySelector('img').src = prizes[currentPrizeIndex]['img'][loopCount-1]);
-    elements.ibox && (elements.ibox.querySelector('img').src = prizes[currentPrizeIndex]['img'][loopCount-1]);
+    if (loopCount >= 1) {
+      elements.box && (elements.box.querySelector('img').src = prizes[currentPrizeIndex]['img'][loopCount-1]);
+      elements.ibox && (elements.ibox.querySelector('img').src = prizes[currentPrizeIndex]['img'][loopCount-1]);
+    }
     prizeElement.prizeLeft.textContent = count;
   };
 })();
