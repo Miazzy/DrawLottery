@@ -1,17 +1,12 @@
 # 抽奖程序
 
 年会抽奖程序，3D 球体抽奖，支持奖品信息配置，参与抽奖人员信息`Excel`导入，抽奖结果`Excel`导出
-
 如果该程序对你有帮助😎😎😎，希望给个⭐**star**⭐喔。😘😘😘😍🥰🎉🎈🎃
-
-> 立即体验一下： [https://moshang-xc.github.io/lottery/](https://moshang-xc.github.io/lottery/)
 
 ## 技术
 
 技术：Node + Express + Three.js
-
 后台通过`Express`实现
-
 前端抽奖界面通过`Three.js`实现 3D 抽奖球，引用了`Three.js`的官方 3D 示例
 
 ## 功能描述：
@@ -25,11 +20,8 @@
 ## 预览
 
 ![lottery.gif](https://raw.githubusercontent.com/moshang-xc/blog/master/share/lottery.gif)
-
 ![index.jpg](https://raw.githubusercontent.com/moshang-xc/blog/master/share/index.jpg)
-
 ![start.jpg](https://raw.githubusercontent.com/moshang-xc/blog/master/share/start.jpg)
-
 ![end.jpg](https://raw.githubusercontent.com/moshang-xc/blog/master/share/end.jpg)
 
 ## 安装
